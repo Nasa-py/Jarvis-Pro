@@ -31,7 +31,7 @@
 
 ## GUI Overview
 
-![GUI Screenshot](GUI.png)
+![GUI Screenshot](UI.png)
 
 ---
 
