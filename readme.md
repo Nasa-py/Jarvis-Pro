@@ -29,6 +29,12 @@
 
 ---
 
+## GUI Overview
+
+![GUI Screenshot](GUI.png)
+
+---
+
 ## 🚀 Quick Start
 
 ### 1. Clone or download
