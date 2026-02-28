@@ -1410,7 +1410,7 @@ class JarvisGUI:
         top.pack(fill="x")
         ctk.CTkLabel(top, text="🤖", font=ctk.CTkFont(size=38)).pack(side="left",padx=(18,6),pady=18)
         tf = ctk.CTkFrame(top, fg_color="transparent"); tf.pack(side="left")
-        ctk.CTkLabel(tf, text="JARVIS PRO V4.1",
+        ctk.CTkLabel(tf, text="JARVIS PRO ",
                      font=ctk.CTkFont(size=30,weight="bold"),text_color=C['accent']).pack(anchor="w")
         ctk.CTkLabel(tf, text="Advanced AI Voice Assistant  •  Smart App Launcher  •  Full System Control",
                      font=ctk.CTkFont(size=11),text_color=C['textdim']).pack(anchor="w")
