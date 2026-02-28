@@ -61,7 +61,7 @@ def _m(text: str, keywords: list) -> bool:
 
 
 # ╔══════════════════════════════════════════════════════════════╗
-# ║             BULLETPROOF APP LAUNCHER                        ║
+# ║             BULLETPROOF APP LAUNCHER                         ║
 # ╚══════════════════════════════════════════════════════════════╝
 class AppLauncher:
     """
@@ -313,7 +313,7 @@ class AppLauncher:
 
 
 # ╔══════════════════════════════════════════════════════════════╗
-# ║                  SYSTEM CONTROLLER                          ║
+# ║                  SYSTEM CONTROLLER                           ║
 # ╚══════════════════════════════════════════════════════════════╝
 class SystemController:
     def __init__(self):
@@ -621,7 +621,7 @@ class SystemController:
 
 
 # ╔══════════════════════════════════════════════════════════════╗
-# ║                     JARVIS BRAIN                            ║
+# ║                     JARVIS BRAIN                             ║
 # ╚══════════════════════════════════════════════════════════════╝
 class JarvisEngine:
     def __init__(self):
@@ -1386,7 +1386,7 @@ class JarvisEngine:
 
 
 # ╔══════════════════════════════════════════════════════════════╗
-# ║                           GUI                               ║
+# ║                           GUI                                ║
 # ╚══════════════════════════════════════════════════════════════╝
 class JarvisGUI:
     def __init__(self):
