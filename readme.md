@@ -1,434 +1,306 @@
-# 🤖 JARVIS Pro - Advanced AI Voice Assistant
+# 🤖 JARVIS Pro V4.1 — Advanced AI Voice Assistant
 
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
-![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
-![Status](https://img.shields.io/badge/Status-Active-success.svg)
-
-**Enterprise-Grade | Multi-threaded | Natural Language Processing**
-
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Commands](#-voice-commands) • [Documentation](#-documentation)
-
-</div>
+> A fully-featured desktop voice assistant inspired by Iron Man's JARVIS.  
+> Control your entire computer with just your voice or text commands.
 
 ---
 
-## 📋 Overview
+## ✨ Features
 
-JARVIS Pro is an intelligent, enterprise-grade AI voice assistant built with Python that brings the power of hands-free computing to your desktop. Featuring advanced speech recognition, natural language processing, and a sleek modern GUI, JARVIS Pro makes interacting with your computer as simple as having a conversation.
-
-### ✨ Highlights
-
-- 🎤 **Real-time Speech Recognition** with Google API integration
-- 🗣️ **Natural Text-to-Speech** synthesis for conversational responses
-- 🧵 **Multi-threaded Architecture** for smooth, non-blocking performance
-- 🎨 **Modern Dark Mode GUI** built with CustomTkinter
-- 🌐 **Web Automation** - Search, browse, and retrieve information
-- 📊 **System Monitoring** - Track CPU, memory, and disk usage
-- 📝 **Personal Assistant** - Notes, reminders, and calculations
-- 🔌 **API Integrations** - Weather, news, Wikipedia, and more
-
----
-
-## 🚀 Features
-
-### Core Capabilities
-
-| Feature | Description |
-|---------|-------------|
-| **Voice Recognition** | Real-time speech-to-text with noise filtering and ambient adjustment |
-| **Command Parsing** | Advanced NLP with keyword matching and alias support |
-| **Text-to-Speech** | Natural voice responses with customizable properties |
-| **Dual Input** | Both voice and text command interfaces |
-| **Data Persistence** | JSON-based storage for notes and reminders |
-| **Multi-threading** | Non-blocking operations for seamless user experience |
-
-### Available Commands
-
-#### 🕐 Information & Utilities
-- Time and date information
-- Weather forecasts for any city
-- Latest news headlines
-- Wikipedia searches
-- Mathematical calculations
-- System performance monitoring
-
-#### 🌐 Web Automation
-- Google web search
-- YouTube video search and playback
-- Direct website navigation
-- Browser automation
-
-#### 📝 Personal Assistant
-- Voice-activated note-taking
-- Note reading and management
-- Reminder creation
-- Command history tracking
-
-#### ⚙️ System Control
-- Application management
-- Screenshot capture
-- Volume control
-- System information display
+- 🎤 **Voice & Text Control** — speak or type commands
+- 🚀 **Smart App Launcher** — opens any installed app reliably (searches PATH, common dirs, Windows Registry)
+- 🔴 **App Closer** — close any running app by name
+- 🖥️ **Full System Control** — lock, shutdown, restart, sleep, screenshot
+- 🌐 **Browser Control** — close tab, new tab, go back, refresh, zoom
+- 📂 **File Management** — create, delete, rename, list, open files and folders
+- 🔊 **Smart Volume** — set exact % (`volume 50`, `volume down to 30`)
+- 🎵 **Media Controls** — play/pause, next/previous track, mute
+- ⌨️ **Keyboard Shortcuts** — copy, paste, undo, save, find by voice
+- 🌤️ **Weather** — live weather for any city
+- 📰 **News** — top headlines (works with or without API key via RSS)
+- 📖 **Wikipedia** — instant summaries
+- 🔍 **Web Search** — Google, YouTube, and 15+ quick-open websites
+- ⏱️ **Timer** — set any duration, get alerted when done
+- 📝 **Notes and Reminders** — save and read back
+- 🧮 **Calculator** — natural language math
+- 🤖 **Claude AI Brain** — natural conversation (optional, needs API key)
+- 📊 **Live System Monitor** — CPU, RAM, Disk bars in the sidebar
+- ⏹️ **Stop Button** — silence JARVIS instantly anytime
 
 ---
 
-## 📦 Installation
+## 🚀 Quick Start
 
-### Prerequisites
-
-- Python 3.7 or higher
-- Microphone for voice input
-- Internet connection (for cloud-based features)
-
-### Step 1: Clone the Repository
-
-```bash
-git clone https://github.com/yourusername/jarvis-pro.git
+### 1. Clone or download
+```
+git clone https://github.com/yourusername/jarvis-pro
 cd jarvis-pro
 ```
 
-### Step 2: Install Dependencies
-
-```bash
+### 2. Install dependencies
+```
 pip install -r requirements.txt
 ```
 
-**requirements.txt:**
+> **Windows users:** If you want exact % volume control, also run:
+> ```
+> pip install pycaw comtypes
+> ```
+
+### 3. Set up API keys (optional but recommended)
+Create a `.env` file in the same folder as `jarvis_pro_v4.py`:
 ```
-customtkinter
-pyttsx3
-SpeechRecognition
-pyaudio
-python-dotenv
-requests
-psutil
-wikipedia
-```
-
-### Step 3: Configure API Keys (Optional)
-
-Create a `.env` file in the project root:
-
-```env
-WEATHER_API_KEY=your_openweathermap_key
-NEWS_API_KEY=your_newsapi_key
+WEATHER_API_KEY=your_key_here
+NEWS_API_KEY=your_key_here
+ANTHROPIC_API_KEY=your_key_here
 ```
 
-**Get free API keys:**
-- Weather: [OpenWeatherMap](https://openweathermap.org/api)
-- News: [NewsAPI](https://newsapi.org/)
+| Key | Where to get it | Cost |
+|-----|----------------|------|
+| `WEATHER_API_KEY` | [openweathermap.org/api](https://openweathermap.org/api) | Free |
+| `NEWS_API_KEY` | [newsapi.org](https://newsapi.org) | Free |
+| `ANTHROPIC_API_KEY` | [console.anthropic.com](https://console.anthropic.com) | Paid |
 
-### Step 4: Install PyAudio (if needed)
+> **Note:** News works without an API key too. JARVIS falls back to free RSS feeds from BBC, Times of India, and NYT automatically.
 
-**Windows:**
-```bash
+### 4. Run
+```
+python jarvis_pro_v4.py
+```
+
+---
+
+## 🗣️ Voice Commands
+
+### 🕐 Time and Date
+| Command | Result |
+|---------|--------|
+| `what time is it` | Current time |
+| `what is today's date` | Today's date |
+
+### 🚀 Open Apps
+| Command | Result |
+|---------|--------|
+| `open file explorer` | Opens Windows Explorer |
+| `open chrome` | Opens Google Chrome |
+| `open firefox` | Opens Firefox |
+| `open notepad` | Opens Notepad |
+| `open calculator` | Opens Calculator |
+| `open discord` | Opens Discord |
+| `open spotify` | Opens Spotify |
+| `open vs code` | Opens VS Code |
+| `open word` | Opens Microsoft Word |
+| `open excel` | Opens Microsoft Excel |
+| `open task manager` | Opens Task Manager |
+| `open settings` | Opens Windows Settings |
+| `launch <any app>` | Opens any installed app |
+
+### 🔴 Close Apps
+| Command | Result |
+|---------|--------|
+| `close chrome` | Kills Chrome |
+| `close spotify` | Kills Spotify |
+| `close discord` | Kills Discord |
+| `close notepad` | Kills Notepad |
+| `close <any app>` | Kills that app's process |
+| `kill firefox` | Force kills Firefox |
+| `force close zoom` | Force kills Zoom |
+
+### 🔊 Smart Volume
+| Command | Result |
+|---------|--------|
+| `volume 50` | Sets volume to exactly 50% |
+| `set volume to 70` | Sets volume to 70% |
+| `volume down to 30` | Lowers volume to 30% |
+| `volume up to 80` | Raises volume to 80% |
+| `lower volume by 20` | Subtracts 20 from current volume |
+| `increase volume by 10` | Adds 10 to current volume |
+| `what's the volume` | Tells you current volume % |
+| `volume up` | Nudges volume up one step |
+| `volume down` | Nudges volume down one step |
+| `mute` | Mutes system audio |
+
+### 🌐 Browser Control
+| Command | Result |
+|---------|--------|
+| `close tab` | Ctrl+W |
+| `new tab` | Ctrl+T |
+| `close window` | Alt+F4 |
+| `go back` | Browser back |
+| `go forward` | Browser forward |
+| `reload` or `refresh` | Refreshes current page |
+| `zoom in` | Zooms in |
+| `zoom out` | Zooms out |
+
+### 🌍 Websites
+| Command | Result |
+|---------|--------|
+| `open youtube` | Opens YouTube |
+| `open gmail` | Opens Gmail |
+| `open instagram` | Opens Instagram |
+| `open whatsapp web` | Opens WhatsApp Web |
+| `open netflix` | Opens Netflix |
+| `open github` | Opens GitHub |
+| `open chatgpt` | Opens ChatGPT |
+| `search for <query>` | Google search |
+| `play <song or video>` | YouTube search |
+
+### 📂 File Management
+| Command | Result |
+|---------|--------|
+| `create file report.txt` | Creates file on Desktop |
+| `create folder Projects` | Creates folder on Desktop |
+| `delete file old.txt` | Deletes file from Desktop |
+| `list files` | Lists Desktop contents |
+| `open file notes.txt` | Opens a file |
+| `rename file old.txt to new.txt` | Renames a file |
+| `open downloads` | Opens Downloads folder |
+| `open documents` | Opens Documents folder |
+| `open pictures` | Opens Pictures folder |
+
+### 📰 Info and Search
+| Command | Result |
+|---------|--------|
+| `latest news` | Top headlines |
+| `weather in Mumbai` | Live weather data |
+| `tell me about Python` | Wikipedia summary |
+| `who is Elon Musk` | Wikipedia lookup |
+
+### 🖥️ System Control
+| Command | Result |
+|---------|--------|
+| `lock screen` | Locks the PC |
+| `shutdown` | Shuts down in 5 seconds |
+| `restart` | Restarts in 5 seconds |
+| `sleep` | Puts PC to sleep |
+| `take screenshot` | Saves PNG to Desktop |
+| `system info` | CPU, RAM, Disk, Battery status |
+| `my ip address` | Shows local IP |
+
+### 🎵 Media
+| Command | Result |
+|---------|--------|
+| `play pause` | Play or pause media |
+| `next song` | Skip to next track |
+| `previous song` | Go to previous track |
+
+### ⌨️ Keyboard Shortcuts
+| Command | Result |
+|---------|--------|
+| `copy that` | Ctrl+C |
+| `paste` | Ctrl+V |
+| `undo` | Ctrl+Z |
+| `save file` | Ctrl+S |
+| `find on page` | Ctrl+F |
+| `select all` | Ctrl+A |
+| `minimize all` | Win+D (show desktop) |
+| `switch window` | Alt+Tab |
+| `snap left` | Win+Left |
+| `snap right` | Win+Right |
+
+### 🎮 Fun
+| Command | Result |
+|---------|--------|
+| `tell me a joke` | Random programming joke |
+| `motivate me` | Inspirational quote |
+| `flip a coin` | Heads or tails |
+| `roll a dice` | Random number 1 to 6 |
+| `random number` | Random number 1 to 100 |
+
+### 📝 Notes and Reminders
+| Command | Result |
+|---------|--------|
+| `take a note: buy groceries` | Saves a note |
+| `read my notes` | Reads your saved notes |
+| `clear notes` | Deletes all notes |
+| `remind me to call mom` | Saves a reminder |
+| `show reminders` | Reads your reminders |
+
+### ⏱️ Timer and Math
+| Command | Result |
+|---------|--------|
+| `set timer for 5 minutes` | Countdown timer with alert |
+| `calculate 25 times 4` | Returns 100 |
+| `how much is 150 divided by 3` | Returns 50 |
+| `what is the square root of 144` | Returns 12 |
+
+---
+
+## ⏹️ Stop Button
+
+Hit the red **Stop Speaking** button in the sidebar at any time to instantly silence JARVIS mid-sentence. You can also say **"stop"**, **"be quiet"**, or **"shut up"**.
+
+---
+
+## 📁 Project Structure
+
+```
+jarvis-pro/
+│
+├── jarvis_pro_v4.py      <- Main application
+├── requirements.txt      <- All dependencies
+├── .env                  <- Your API keys (create this yourself)
+├── README.md             <- This file
+│
+└── jarvis_data/          <- Auto-created on first run
+    ├── notes.json        <- Your saved notes
+    └── reminders.json    <- Your saved reminders
+```
+
+---
+
+## ⚙️ System Requirements
+
+- Python 3.9 or higher
+- Windows 10/11 (primary target), macOS, or Linux
+- Microphone (for voice commands)
+- Speakers (for JARVIS to speak back)
+- Internet connection (for weather, news, Wikipedia, search)
+
+---
+
+## 🔧 Troubleshooting
+
+**JARVIS isn't speaking?**  
+Make sure `pyttsx3` installed correctly. On Windows it uses SAPI5 built-in voices. Check Control Panel → Speech Recognition → Text to Speech to confirm a voice is installed.
+
+**Microphone not working?**  
+Install `pyaudio`. On Windows you may need:
+```
 pip install pipwin
 pipwin install pyaudio
 ```
 
-**Linux:**
-```bash
-sudo apt-get install python3-pyaudio
+**Volume % control not working?**  
+Install pycaw for direct Windows volume control:
+```
+pip install pycaw comtypes
 ```
 
-**macOS:**
-```bash
-brew install portaudio
-pip install pyaudio
+**App won't open?**  
+Make sure the app is installed on your system. JARVIS searches common install paths and the Windows Registry automatically. Try using the full app name if a short name doesn't work.
+
+**pyautogui fails on startup?**  
+```
+pip install pyautogui
 ```
 
----
-
-## 🎯 Usage
-
-### Starting JARVIS Pro
-
-```bash
-python jarvis_pro.py
+**Getting a ModuleNotFoundError?**  
+Run the full install again:
 ```
-
-### Using Voice Commands
-
-1. Click **"Start Listening"** button
-2. Wait for the "Listening..." status
-3. Speak your command clearly
-4. JARVIS will process and respond
-
-### Using Text Commands
-
-1. Type your command in the text input box
-2. Press Enter or click "Send"
-3. View response in the conversation panel
-
-### Quick Actions
-
-Use pre-configured buttons for instant access to common commands without voice/text input.
-
----
-
-## 🎤 Voice Commands
-
-### Basic Commands
-
-```
-"What time is it?"
-"Tell me the date"
-"What's the weather in Mumbai?"
-"Tell me a joke"
-"What's the news?"
-```
-
-### Web Automation
-
-```
-"Search for Python tutorials"
-"Open YouTube"
-"Open GitHub"
-"Play Imagine Dragons on YouTube"
-"Wikipedia artificial intelligence"
-```
-
-### Personal Assistant
-
-```
-"Take a note: Meeting at 3 PM"
-"Read my notes"
-"Remind me to call John"
-"Calculate 25 times 4"
-```
-
-### System Control
-
-```
-"System information"
-"Take a screenshot"
-"Close Chrome"
-"Set volume to 50"
-"Exit" / "Goodbye"
+pip install -r requirements.txt
 ```
 
 ---
 
-## 🏗️ Architecture
+## 🤖 AI Conversation
 
-### System Design
-
-```
-┌─────────────────────────────────────┐
-│         JARVIS Pro GUI              │
-│  (CustomTkinter Interface)          │
-│  - Voice Controls                   │
-│  - Text Input                       │
-│  - Chat Display                     │
-│  - Quick Actions                    │
-└──────────────┬──────────────────────┘
-               │
-               │ Queue-based Communication
-               │
-┌──────────────▼──────────────────────┐
-│       JARVIS Engine                 │
-│  - Speech Recognition               │
-│  - Text-to-Speech                   │
-│  - Command Parsing                  │
-│  - API Integrations                 │
-│  - Data Management                  │
-└──────────────┬──────────────────────┘
-               │
-     ┌─────────┴─────────┐
-     │                   │
-┌────▼────┐        ┌────▼────┐
-│  APIs   │        │  Data   │
-│ Weather │        │ Storage │
-│  News   │        │  Notes  │
-│Wikipedia│        │Reminders│
-└─────────┘        └─────────┘
-```
-
-### Technology Stack
-
-- **Frontend:** CustomTkinter (Modern GUI)
-- **Speech:** pyttsx3 (TTS), SpeechRecognition (STT)
-- **APIs:** OpenWeatherMap, NewsAPI, Wikipedia
-- **System:** psutil, threading, queue
-- **Data:** JSON-based persistent storage
-
----
-
-## 📸 Screenshots
-
-### Main Interface
-![JARVIS Main](https://via.placeholder.com/800x600/0a0e27/00d4ff?text=JARVIS+Pro+Main+Interface)
-
-### Voice Listening Mode
-![Listening Mode](https://via.placeholder.com/800x600/0a0e27/ff3366?text=Listening+Mode)
-
-### Conversation Display
-![Chat Display](https://via.placeholder.com/800x600/0a0e27/00ff88?text=Conversation+Display)
-
----
-
-## 🛠️ Configuration
-
-### Customizing Voice Properties
-
-Edit the `JarvisEngine.__init__()` method:
-
-```python
-self.engine.setProperty('rate', 180)    # Speech rate (words per minute)
-self.engine.setProperty('volume', 0.9)  # Volume (0.0 to 1.0)
-```
-
-### Adjusting Recognition Sensitivity
-
-```python
-self.recognizer.energy_threshold = 4000           # Microphone sensitivity
-self.recognizer.pause_threshold = 0.8             # Pause detection
-self.recognizer.dynamic_energy_threshold = True   # Auto-adjust for noise
-```
-
-### Adding Custom Commands
-
-Add to the `commands` dictionary in `JarvisEngine`:
-
-```python
-self.commands = {
-    'your_command': {
-        'func': self.your_function,
-        'keywords': ['keyword1', 'keyword2']
-    }
-}
-```
-
----
-
-## 📊 Performance Metrics
-
-| Metric | Value |
-|--------|-------|
-| Voice Recognition Accuracy | 88-92% |
-| Command Response Time | 1.2-1.8 seconds |
-| Memory Usage | 120-150 MB |
-| Startup Time | 2-3 seconds |
-| Supported Commands | 18+ |
-
----
-
-## 🔮 Future Enhancements
-
-### Planned Features
-
-- [ ] **Contextual Memory** - Remember conversation history
-- [ ] **Wake Word Detection** - "Hey JARVIS" activation
-- [ ] **Emotion Detection** - Sentiment analysis
-- [ ] **Multi-language Support** - International language support
-- [ ] **Smart Home Integration** - IoT device control
-- [ ] **Email Management** - Read and send emails
-- [ ] **Calendar Integration** - Schedule management
-- [ ] **Mobile App** - Companion smartphone application
-- [ ] **Voice Biometrics** - User authentication
-- [ ] **Offline Mode** - Local speech recognition
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
-- Follow PEP 8 style guidelines
-- Add docstrings to all functions
-- Test thoroughly before submitting
-- Update documentation as needed
-
----
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Issue: PyAudio installation fails**
-- Windows: Use `pipwin install pyaudio`
-- Linux: Install `python3-pyaudio` system package
-- macOS: Install portaudio via Homebrew first
-
-**Issue: Microphone not detected**
-- Check system permissions for microphone access
-- Verify microphone is set as default input device
-- Test microphone in system settings
-
-**Issue: Speech recognition not working**
-- Ensure stable internet connection
-- Check firewall settings for API access
-- Verify microphone input levels
-
-**Issue: API features not working**
-- Add API keys to `.env` file
-- Check API key validity and quotas
-- Verify internet connectivity
+Add your `ANTHROPIC_API_KEY` to `.env` to enable natural conversation powered by Claude. Any command JARVIS doesn't recognise as a system command gets sent to Claude for a smart, context-aware reply. JARVIS remembers the last 20 messages for context.
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-```
-MIT License
-
-Copyright (c) 2024 JARVIS Pro
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software...
-```
+MIT License — free to use, modify, and distribute.
 
 ---
-
-## 👏 Acknowledgments
-
-- **CustomTkinter** - Modern GUI framework
-- **pyttsx3** - Text-to-speech engine
-- **SpeechRecognition** - Voice input processing
-- **OpenWeatherMap** - Weather data API
-- **NewsAPI** - News aggregation service
-- **Wikipedia** - Knowledge base integration
-
----
-
-## 📞 Contact & Support
-
-- **Author:** Your Name
-- **Email:** your.email@example.com
-- **GitHub:** [@yourusername](https://github.com/yourusername)
-- **Issues:** [Report Bug](https://github.com/yourusername/jarvis-pro/issues)
-- **Discussions:** [Ask Questions](https://github.com/yourusername/jarvis-pro/discussions)
-
----
-
-## 🌟 Star History
-
-If you find JARVIS Pro helpful, please consider giving it a star! ⭐
-
-[![Star History Chart](https://api.star-history.com/svg?repos=yourusername/jarvis-pro&type=Date)](https://star-history.com/#yourusername/jarvis-pro&Date)
-
----
-
-<div align="center">
-
-**Made by <a href="https://www.instagram.com/_nasa_40/" >  Nasa  </a>**
-
-[⬆ Back to Top](#-jarvis-pro---advanced-ai-voice-assistant)
-
-</div>

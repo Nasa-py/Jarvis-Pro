@@ -1,3 +1,6 @@
+# JARVIS Pro — Requirements
+# Install all with: pip install -r requirements.txt
+
 customtkinter
 python-dotenv
 requests
@@ -7,3 +10,7 @@ pyaudio
 pyttsx3
 speechrecognition
 pyautogui
+pipwin 
+anthropic
+pycaw
+comtypes
