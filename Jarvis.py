@@ -1393,7 +1393,7 @@ class JarvisGUI:
         ctk.set_appearance_mode("dark")
         ctk.set_default_color_theme("blue")
         self.root = ctk.CTk()
-        self.root.title("JARVIS Pro V4.1 — AI Voice Assistant")
+        self.root.title("JARVIS Pro  — AI Voice Assistant")
         self.root.geometry("1700x1000")
         self.root.configure(fg_color=C['bg'])
         self.root.minsize(1200,720)
